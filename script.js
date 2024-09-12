@@ -22,5 +22,24 @@ function closeAllPopups() {
   }
 
   function redirectToGoogleForm() {
-    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdchx4FYwiAtE__U9ZA_Vy2H0XG1Zf8Dzp3Cioa_5fEi-5-kA/viewform?usp=sf_link';
+    window.location.href = 'https://forms.gle/aoxZ5Taf2pkjk7fq5';
   }
+  function redirectToGoogleForm1() {
+    window.location.href ='https://forms.gle/rnajHc2E3UJQfG6M7'; 
+  }
+  function redirectToGoogleForm2() {
+    window.location.href ='https://forms.gle/wCPf8wwyFFToAweM6'; 
+  }
+  function redirectToGoogleForm3() {
+    window.location.href ='https://forms.gle/Ye5LBnN8bmFKoEG69'; 
+  }
+  function redirectToGoogleForm4() {
+    window.location.href ='https://forms.gle/2TG7jDUk2TjuERuZ7'; 
+  }
+  function redirectToGoogleForm5() {
+    window.location.href ='https://forms.gle/bRQQvcufQhKpoTiA6'; 
+  }
+  function redirectToGoogleForm6() {
+    window.location.href ='https://forms.gle/N9vwUCyRGQ5qp4KX6'; 
+  }
+  
