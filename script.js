@@ -36,7 +36,7 @@ function redirectToGoogleFormvv() {
 function redirectToGoogleFormaa() {
   window.location.href ='https://forms.gle/2TG7jDUk2TjuERuZ7'; 
 }
-function redirectToGoogleFormee() {
+function redirectToGoogleForee() {
   window.location.href ='https://forms.gle/bRQQvcufQhKpoTiA6'; 
 }
 function redirectToGoogleFormcl() {
