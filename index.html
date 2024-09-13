@@ -12,24 +12,36 @@
         <source src="assests/Gen-3 Alpha Turbo 4009616896, smoothly animate the, Cropped - Firefly i.mp4" type="video/mp4">
     </video>
 
+    <!-- Navbar Section -->
     <nav>
-        <div class="nav-img">
-            <img src="assests/WhatsApp_Image_2024-09-09_at_20.38.11_49b8df13-removebg-preview.png" alt="logo">
+        <h4>STROM-2K24</h4>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
-        <ul>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="events.html">Event</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="events.html" class="register-link">Register</a></li>
         </ul>
     </nav>
 
+    <!-- Title and Content Section -->
     <div class="title">
-        <div class="title-contents">
-            <h1 class="p1">STROM 2K24</h1>
-            <h2 class="p2">TECHNICAL SYMPOSIUM</h2>
-            <h3 class="p3">28-09-2024 | Loyola-ICAM</h3>
+        <div class="title-container">
+            <div class="logo-container">
+                <img src="assests/alo.png" alt="logo" class="logo-image">
+            </div>
+            <div class="title-contents">
+                <h1 class="p1">STROM 2K24</h1>
+                <h2 class="p2">TECHNICAL SYMPOSIUM</h2>
+                <h3 class="p3">28-09-2024 | Loyola-ICAM</h3>
+                <a href="events.html" class="explore-link">Explore Us</a>
+            </div>
         </div>
     </div>
 
+    <!-- Vision Section -->
     <section class="vision-section">
         <h1>Our Vision</h1>
         <div class="description">
@@ -44,11 +56,9 @@
                 <p><strong>DEPARTMENT OF ELECTRICAL AND ELECTRONICS ENGINEERING</strong></p>
             </div>
         </div>
-        <div class="btn">
-            <button><a href="events.html"> Explore Us</a></button>
-        </div>
     </section>
    
+    <!-- Footer Section -->
     <footer>
         <div class="footer-content">
             <div class="map-section">
@@ -59,25 +69,31 @@
             <div class="social-media">
                 <h3>Connect With Us</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/LICETStud/"  title="facebook" target="_blank"> 
-                      <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    <a href="https://www.instagram.com/strom_2k24?igsh=dW80dGVudjE2Mnpn">
+                        <img class="typ" src="assests/instagram.png" alt="instagram">
+                        <p>strom_2k24</p>
                     </a>
+                    <a href="mailto:strom2024@licet.ac.in">
+                        <img class="typ" src="assests/mail.png" alt="mail">
+                        <p>strom2024@licet.ac.in</p>
                     </a>
-                    <a href="https://www.instagram.com/loyolaicam_official/" title="instagram" target="_blank">  
-                      <i class="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCR13QxRq4JDFMsy4c-bKuww" title="youtube" target="_blank">
-                      <i class="fa fa-youtube-square" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/school/loyola-icam-college-of-engineering-and-technology/posts/?feedView=all" title="linkedin" target="_blank">
-                      <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    <a href="https://eee-symposium.github.io/STROM-2K24/">
+                        <img class="typ" src="assests/internet.png" alt="internet">
+                        <p>eee-symposium.github.io/STROM-2K24/</p>
                     </a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 STROM 2K24. Designed By Ajay and Anto.</p>
+            <p>&copy; 2024 STROM 2K24.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
