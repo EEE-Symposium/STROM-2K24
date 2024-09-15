@@ -349,9 +349,15 @@ i {
 .title-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    max-width: 1200px;
+}
+.tcontainer
+{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    justify-content: space-around;
 }
 
 .logo-container {
@@ -363,10 +369,16 @@ i {
     height: auto;
     display: block;
 }
+.limg
+{
+    display: block;
+    width:200px;
+    height: 200px;
+}
 
 .title-contents {
-    flex: 2;
-    text-align: right;
+
+    text-align:center;
 }
 
 /* Explore Link Button */
@@ -428,6 +440,22 @@ i {
     .gallery-container {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
+
+    .licet h1{
+        font-size: 25px;
+    }
+    .licet h3 {
+        font-size: 16px;
+    }
+    .licet p
+    {
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .tcontainer
+    {
+        margin-bottom:70px;
+    }
 }
 /* Inside the existing media query for mobile */
 @media only screen and (max-width: 768px) {
@@ -464,7 +492,7 @@ i {
 }
 
 .gallery-video {
-    width: 50%;
+    width:  00px;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
