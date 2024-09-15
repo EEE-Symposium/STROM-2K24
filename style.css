@@ -556,4 +556,8 @@ i {
     border-radius: 10px;
 }
 
-
+.iam{
+    display:flex;
+    justify-content: space-between;
+    width:300px;
+}
