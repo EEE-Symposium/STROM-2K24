@@ -1,182 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STROM 2K24</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" href="styles.css">   
-  <link rel="shortcut icon" href="assests/WhatsApp_Image_2024-09-09_at_20.38.11_49b8df13-removebg-preview.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Description Slider</title>
+    
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent vertical scrolling */
+}
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  background: url('path/to/placeholder-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+.olay
+{
+  background-color: black;
+  z-index:-1;
+}
+.swiper-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh; /* Full height */
+    padding: 0; /* Remove padding to avoid extra space */
+    overflow: hidden; /* Prevent vertical scrolling */
+}
+.swiper-content
+{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-color: rgba(21, 19, 19,0.); /* Transparent background for slides */
+    backdrop-filter: blur(10px); /* Optional: Adds blur effect behind slides */
+    padding: 20px;
+    border-radius: 15px;
+    box-sizing: border-box; /* Ensure padding is included in element’s total width and height */
+    transform: 0.3s ease;
+}
+.swiper-slide:hover{
+    transform: scale(1.05); /* Slightly zoom in */
+}
+/* Responsive typography */
+.swiper-slide h2 {
+  margin: 0;
+  color: #ffcc00;
+  font-size:40px;
+}
+
+.swiper-slide h3 {
+  margin: 0;
+  color: #e0e0e0;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.swiper-slide p {
+  color: #ccc;
+  margin: 10px 0;
+  overflow: normal;
+}
+
+.swiper-slide .venue {
+  color: #ffcc00;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.swiper-wrapper .olay{
+    background-color: black;
+    opacity:0.5;
+    z-index:-1;
+}
+.swiper-content a
+{
+    align-self: center;
+    
+}
+/* Register button */
+.register-btn {
+    margin: 10px;
+    padding:15px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #FF6347;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: ease-out 1s ;
+}
+
+.register-btn:hover {
+    background-color: #FF4500;
+    transform: scale(1.2);
+    transition: ease-in-out;
+}
+.swiper-content
+{
+    font-size:medium;
+}
+
+/* Adjust styles for different screen sizes */
+@media (max-width: 768px) {
+    .swiper-slide {
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-slide {
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+.swiper-content p{color: white;}
+    </style>
 </head>
 <body>
-  <video class="background-video" autoplay muted loop>
-    <source src="assests/Gen-3 Alpha Turbo 4009616896, smoothly animate the, Cropped - Firefly i.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <header class="header">
-    <a href="index.html" class="home-icon">
-      <img src="assests/icon.png" alt="Home">
-    </a>    
-    <h1 class="bg">STROM 2K24</h1>
-  </header>
-
-  <div class="event-grid">
-    <div class="card">
-      <img src="paper.jpg" alt="Paper Presentation">
-      <div class="card-content">
-        <h2>Starry Insights</h2>
-        <h3>Paper Presentation</h3>
-        <p class="venue">Venue: J31</p>
-        <p>Time: 10.30 AM - 12.30 PM</p>
-        <button class="register-btn" onclick="openPopup('starry-insights')">view</button>
+    <div class="olay">
+        <video class="background-video" autoplay muted loop>
+          <source src="assests/Gen-3 Alpha Turbo 4009616896, smoothly animate the, Cropped - Firefly i.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
+    <!-- Swiper container -->
+<div class="swiper-container">
+
+    <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide" id="s1">
+            <div class="swiper-content">
+                <h2>Starry Insights</h2>
+                <h3>Paper Presentation</h3>
+                <p class="venue">Venue: F11</p>
+                <p>Time: 10:30 AM - 12:30 PM</p>
+                <p><strong>Topics for Participants:</strong></p>
+                <ul>
+                    <li>Electric vehicle charging solution</li>
+                    <li>AI in energy management 
+                    </li>
+                    <li>PV system efficiency
+                    </li>
+                    <li>IOT in automation
+                    </li>
+                    <li>Battery magementment innovation</li>
+                    <li>Power electronis in renewables</li>
+                    <li>Smart Grid Intergration</li>
+                </ul>
+                <p><strong>Pre-Event Preparations:</strong> Clear deadlines for abstract and full paper submissions will be set and reviewed by faculty members. The venue and necessary equipment are arranged.</p>
+                <p><strong>On the Day of the Event:</strong></p>
+                <ul>
+                    <li><strong>Registration:</strong> Participants will register and receive their schedules.</li>
+                    <li><strong>Inauguration:</strong> The event begins with a welcome speech and introduction.</li>
+                    <li><strong>Presentations:</strong> Participants will present their papers, followed by a brief Q&A. Judges will evaluate based on content, delivery, and innovation.</li>
+                    <li><strong>Breaks:</strong> Short breaks will be scheduled to keep everyone refreshed.</li>
+                    <li><strong>Final Remarks and Awards:</strong> Winners will be announced and awards presented.</li>
+                </ul>
+                <p><strong>Post-Event Activities:</strong> A report will be compiled and highlights shared. Thank-you notes will be sent to all participants and judges.</p>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide" id="s2">
+            <div class="swiper-content">
+                <h2>Vincent’s Voyage</h2>
+                <h3>Treasure Hunt</h3>
+                <p class="venue">Venue: E01 & F01</p>
+                <p>Time: 11:00 AM - 1:00 PM</p>
+                <p><strong>Objectives:</strong> Enhance participants' technical skills and team coordination in a fun and thrilling way. The event features three levels: ElectroElement Hunt, Mystery Module Quest, and Treasure Hunt.</p>
+                <p><strong>Rules and Regulations:</strong></p>
+                <ul>
+                    <li>Each team should consist of 3 members.</li>
+                    <li>Participants should be familiar with common electrical and electronic components.</li>
+                    <li>Adhere to specified time limits.</li>
+                    <li>Maintain honesty and integrity. Cheating or misconduct will result in disqualification.</li>
+                    <li>Remain in designated areas and do not interfere with other teams.</li>
+                    <li>No external tools or assistance unless provided by organizers.</li>
+                    <li>All team members must contribute equally. Exclusion of any member will result in disqualification.</li>
+                    <li>Judges' decisions are final with no appeals permitted.</li>
+                </ul>
+                <p><strong>For Queries Contact:</strong></p>
+                <p>Lokeshwar</p>
+                <p>Ph no: +91 75501 89432</p>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide" id="s3">
+            <div class="swiper-content">
+                <h2>Electric Euphoria</h2>
+                <h3>Circuit Debugging</h3>
+                <p class="venue">Venue: F02</p>
+                <p>Time: 12:30 PM - 2:30 PM</p>
+                <p><strong>Objective:</strong> Enhance participants' technical skills and teamwork through hands-on troubleshooting exercises. The event includes quizzes, circuit formation, debugging errors, and building circuits to develop critical thinking and problem-solving skills.</p>
+                <p><strong>Rules and Regulations:</strong></p>
+                <ul>
+                    <li>Each team can have 3-4 participants.</li>
+                    <li>Identify and correct faults in given circuits within the time limit.</li>
+                    <li>Evaluation based on accuracy and speed of fault identification and correction.</li>
+                    <li>Cheating or unethical behavior will result in disqualification.</li>
+                    <li>Register by specified deadlines and complete tasks within allotted time.</li>
+                    <li>Judges' decisions are final and binding.</li>
+                </ul>
+                <p><strong>For Queries Contact:</strong></p>
+                <p>K Ashwin</p>
+                <p>Ph no: +91 82480 65623</p>
+                <p>Ashlin</p>
+                <p>Ph no: +91 97919 72613</p>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide" id="s4">
+            <div class="swiper-content">
+                <h2>Iris Intellect</h2>
+                <h3>Technical Quiz</h3>
+                <p class="venue">Venue: J12</p>
+                <p>Time: 10:00 AM - 12:00 Noon</p>
+                <p><strong>Objectives:</strong></p>
+                <ul>
+                    <li>Assess knowledge and understanding of electrical engineering concepts, theories, and principles.</li>
+                    <li>Evaluate problem-solving skills in electrical engineering.</li>
+                    <li>Promote learning and awareness of new technologies and advancements.</li>
+                    <li>Assess knowledge of various facets related to electrical and electronics.</li>
+                </ul>
+                <p><strong>Rules and Regulations:</strong></p>
+                <ul>
+                    <li>No entries will be entertained after the event starts.</li>
+                    <li>Teams of 2 members each.</li>
+                    <li>Usage of mobile phones is strictly prohibited.</li>
+                    <li>Some questions will be marked with "*"; these questions decide advancement in case of a tie.</li>
+                    <li>Malpractice will result in immediate disqualification.</li>
+                </ul>
+                <p><strong>For Queries Contact:</strong></p>
+                <p>Arvin Arjun</p>
+                <p>Ph no: 6380561576</p>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide" id="s5">
+            <div class="swiper-content">
+                <h2>Arles Artistry</h2>
+                <h3>Surprise Event</h3>
+                <p class="venue">Venue: D23</p>
+                <p>Time: 11:45 AM - 1:45 PM</p>
+                <p><strong>Arles Artistry:</strong> A creativity test where participants market unusual products with novel ideas and punchlines. Teams create original ads for a chance to win prizes.</p>
+                <p><strong>Rules and Regulations:</strong></p>
+                <ul>
+                    <li>Each team comprises a maximum of 2-3 members.</li>
+                    <li>A caption for the product will be provided.</li>
+                    <li>Teams will have 2 minutes for discussion and 4 minutes to perform.</li>
+                    <li>The event consists of two rounds:
+                        <ul>
+                            <li>Round 1: BRAND SURFING (2 teams compete head-to-head and are judged based on timing).</li>
+                            <li>Round 2: Participants receive a product on the spot and must advertise it.</li>
+                        </ul>
+                    </li>
+                    <li>Marks will be awarded based on finding the product brand name, performance, and handling queries.</li>
+                    <li>Judges' decisions are final and binding.</li>
+                </ul>
+                <p><strong>For Queries Contact:</strong></p>
+                <p>Subin jenson</p>
+                <p>Ph no: 8148629670</p>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+        </div>
+        <!-- Slide 6 -->
+        <div class="swiper-slide" id="s6">
+            <div class="swiper-content">
+                <h2>Swirls of Genius</h2>
+                <h3>Puzzle</h3>
+                <p class="venue">Venue: F02</p>
+                <p>Time: 10:45 AM - 12:30 PM</p>
+                <p><strong>Objective:</strong> Solidify understanding of fundamental concepts and principles such as circuit theory, power systems, power electronics, and controls through creative problem-solving in puzzles.</p>
+                <p><strong>Rules and Regulations:</strong></p>
+                <ul>
+                    <li>Each team can have 3-4 participants.</li>
+                    <li>The event consists of three rounds:
+                        <ul>
+                            <li>Round 1: Riddles and puzzles</li>
+                            <li>Round 2: Spin the Wheel</li>
+                            <li>Round 3: Triumph the Ace (find the specific component or circuit using given clues)</li>
+                        </ul>
+                    </li>
+                    <li>Teams are evaluated based on points acquired in each round.</li>
+                    <li>Cheating or unusual behavior will lead to disqualification.</li>
+                    <li>Participants must register by the deadlines and complete tasks within the given time.</li>
+                </ul>
+                <p><strong>For Queries Contact:</strong></p>
+                <p>P Gopika Sree</p> 
+                <p>Ph no: +91 63695 85765</p>
+                <p>Rithesh</p>
+                <p>Ph no: +91 90257 81854</p>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+        </div>
+        <!-- Slide 7 -->
+        <div class="swiper-slide" id="s7">
+            <div class="swiper-content">
+                <h2>Cypress Labyrinth</h2>
+                <h3>Escape Room</h3>
+                <p class="venue">Venue: J13</p>
+                <p>Time: 12:00 Noon - 2:00 PM</p>
+                <p><strong>Objective:</strong> Solve a series of engineering-related and technical puzzles to escape from a room inspired by intriguing scenarios. The goal is to unlock the final puzzle or mechanism for "escape" or completion of the event.</p>
+                <p><strong>Rules and Regulations:</strong></p>
+                <ul>
+                    <li>Teams should consist of 2-3 participants.</li>
+                    <li>Teams must stay together throughout the event.</li>
+                    <li>The team that escapes the room in the least time is the winner.</li>
+                    <li>Follow all safety instructions provided. Handle all electronic devices and equipment carefully; do not force or damage any equipment or props.</li>
+                    <li>Use all provided clues and tools. No running or rough play is allowed to ensure safety.</li>
+                    <li>Puzzles and clues must be solved in the designated order.</li>
+                    <li>Teams are allowed a limited number of hints (e.g., 3) from the game master. Additional hints may affect the final score or timing.</li>
+                    <li>No mobile phones, tablets, or external devices allowed during the game. No outside help or interference is permitted.</li>
+                    <li>Respect all props, devices, and materials. Intentional damage will result in disqualification.</li>
+                    <li>The team that escapes within the allotted time with the fewest hints will achieve the highest score. Teams that do not escape within the time limit will receive completion status and feedback.</li>
+                </ul>
+                <p><strong>For Queries Contact:</strong></p>
+                <p>Allwyn Felix</p> 
+                <p>Ph no: +91 7200388969</p>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+   
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Add Navigation buttons (optional) -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
 
-    <div class="card">
-      <img src="vincent.jpg" alt="Treasure Hunt">
-      <div class="card-content">
-        <h2>Vincent’s Voyage</h2>
-        <h3>Treasure Hunt</h3>
-        <p class="venue">Venue: E02 </p>
-        <p>Time: 11.00 AM - 1.00 PM</p>
-        <button class="register-btn" onclick="openPopup('vincent-voyage')">view</button>
-      </div>
-    </div>
+    <!-- Link Swiper's JavaScript -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <div class="card">
-      <img src="eup.jpg" alt="Circuit Debugging">
-      <div class="card-content">
-        <h2>Electric Euphoria</h2>
-        <h3>Circuit Debugging</h3>
-        <p class="venue">Venue: F02</p>
-        <p>Time: 12.30 AM - 2.30 PM</p>
-        <button class="register-btn" onclick="openPopup('electric-euphoria')">view</button>
-      </div>
-    </div>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+        loop: true, // Allows infinite scrolling
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 1, // One slide at a time
+        spaceBetween: 30, // Space between slides
+        effect: 'slide', // Slide transition effect
+        breakpoints: {
+            768: { slidesPerView: 2 }, // Show 2 slides on tablets
+            1024: { slidesPerView: 3 }, // Show 3 slides on desktops
+            1440: { slidesPerView: 4 }, // Show 4 slides on large screens
+        },
+        });
 
-    <div class="card">
-      <img src="iris.jpg" alt="Technical Quiz">
-      <div class="card-content">
-        <h2>Iris Intellect</h2>
-        <h3>Technical Quiz</h3>
-        <p class="venue">Venue: J12</p>
-        <p>Time: 10.00 AM - 12.00 Noon</p>
-        <button class="register-btn" onclick="openPopup('iris-intellect')">view</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="arles.jpg" alt="Surprise Event">
-      <div class="card-content">
-        <h2>Arles Artistry</h2>
-        <h3>Surprise Event</h3>
-        <p class="venue">Venue: E32</p>
-        <p>Time: 11.45 AM - 01.45 PM</p>
-        <button class="register-btn" onclick="openPopup('arles-artistry')">view</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="swirl.jpg" alt="Puzzle 01">
-      <div class="card-content">
-        <h2>Swirls of Genius</h2>
-        <h3>Puzzle</h3>
-        <p class="venue">Venue: F01</p>
-        <p>Time: 10.45 AM - 12.30 PM</p>
-        <button class="register-btn" onclick="openPopup('swirls-of-genius')">view</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="puzzle.jpg" alt="Puzzle 02">
-      <div class="card-content">
-        <h2>Cypress Labyrinth</h2>
-        <h3>Escape Room</h3>
-        <p class="venue">Venue: J12</p>
-        <p>Time: 12.00 Noon - 2.00 PM</p>
-        <button class="register-btn" onclick="openPopup('cypress-labyrinth')">view</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="starry-insights" class="popup">
-    <button class="popup-close" onclick="closePopup('starry-insights')">×</button>
-    <div class="popup-content">
-      <h2>Starry Insights</h2>
-      <p><strong>Description:</strong> 'Starry Insights' symbolizes the bright, innovative ideas our participants will share, illuminating minds and sparking new discoveries in Electrical and Electronics Engineering. Like stars lighting up the night sky, we aim for this event to be a beacon of academic excellence and intellectual exploration.</p>
-      <p> Event head : Adithiyha </p> 
-      <p>Ph.No: 7200158427</p>
-      <button class="popup-register" onclick="redirectToGoogleForm1()">Register</button>
-    </div>
-  </div>
-
-  <div id="vincent-voyage" class="popup">
-    <button class="popup-close" onclick="closePopup('vincent-voyage')">×</button>
-    <div class="popup-content">
-      <h2>Vincent’s Voyage</h2>
-      <p><strong>Description:</strong>Enhance participants' technical skills and team coordination through exciting and educational activities, including ElectroElement Hunt, Mystery Module Quest, and Treasure Hunt.</p>
-      <p> Event head: Lokeshwar K</p>
-      <p>Ph.No: 7550189432</p>
-      <button class="popup-register" onclick="redirectToGoogleForm3()">Register</button>
-    </div>
-  </div>
-
-  <div id="electric-euphoria" class="popup">
-    <button class="popup-close" onclick="closePopup('electric-euphoria')">×</button>
-    <div class="popup-content">
-      <h2>Electric Euphoria</h2>
-      <p><strong>Description:</strong>Enhance participants' technical skills and teamwork through hands-on troubleshooting exercises, including quizzes, circuit formation, error debugging, and circuit identification and building.</p>
-      <p>Event head: Ashwin K</p>
-      <p>Ph.No: 8248065623</p>
-      <button class="popup-register" onclick="redirectToGoogleForm5()">Register</button>
-    </div>
-  </div>
-
-  <div id="iris-intellect" class="popup">
-    <button class="popup-close" onclick="closePopup('iris-intellect')">×</button>
-    <div class="popup-content">
-      <h2>Iris Intellect</h2>
-      <p><strong>Description:</strong>Assess and enhance understanding of electrical engineering concepts, problem-solving skills, and awareness of new technologies through evaluation of theoretical knowledge and practical identification of electrical and electronic components.</p>
-      <p> Event head : Arvin Arjun M </p>
-      <p>Ph.No: 6380561576</p>
-      <button class="popup-register" onclick="redirectToGoogleForm()">Register</button>
-    </div>
-  </div>
-
-  <div id="arles-artistry" class="popup">
-    <button class="popup-close" onclick="closePopup('arles-artistry')">×</button>
-    <div class="popup-content">
-      <h2>Arles Artistry</h2>
-      <p><strong>Description:</strong>Arles Artistry challenges participants to market unusual products with creative ideas and catchy punchlines, with original ads competing for prizes.</p>
-      <p> Event heads : Subin Jenson A</p>
-      <p> Ph.No: 8148629670</p>
-      <button class="popup-register" onclick="redirectToGoogleForm4()">Register</button>
-    </div>
-  </div>
-
-  <div id="swirls-of-genius" class="popup">
-    <button class="popup-close" onclick="closePopup('swirls-of-genius')">×</button>
-    <div class="popup-content">
-      <h2>Swirls of Genius</h2>
-      <p><strong>Description:</strong>
-        Strengthen your grasp of core concepts in circuit theory, power systems, and more, while honing critical and innovative problem-solving skills through engaging puzzles.</p>
-      <p> Event heads : Gopika P</p>
-      <p> Ph.No: 6369585765</p>
-      <button class="popup-register" onclick="redirectToGoogleForm2()">Register</button>
-    </div>
-  </div>
-
-  <div id="cypress-labyrinth" class="popup">
-    <button class="popup-close" onclick="closePopup('cypress-labyrinth')">×</button>
-    <div class="popup-content">
-      <h2>Cypress Labyrinth</h2>
-      <p><strong>Description:</strong>Participants solve engineering and technical puzzles in themed scenarios to unlock the final mechanism and achieve "escape" or event completion.</p>
-      <p> Event heads : Allwyn Felix I</p>
-      <p>Ph.No: 7200388969</p>
-      <button class="popup-register" onclick="redirectToGoogleForm6()">Register</button>    </div>
-  </div>
-
-  <script src="script.js"></script>
+    </script>
 </body>
 </html>
