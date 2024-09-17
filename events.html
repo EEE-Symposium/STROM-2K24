@@ -10,11 +10,37 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Prevent vertical scrolling */
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */ /* Remove this line to allow vertical scrolling */
+}
+
+.swiper-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh; /* Full height */
+    padding: 0; /* Remove padding to avoid extra space */
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-color: rgba(21, 19, 19, 0.5); /* Semi-transparent background for slides */
+    backdrop-filter: blur(10px); /* Optional: Adds blur effect behind slides */
+    padding: 20px;
+    border-radius: 15px;
+    box-sizing: border-box; /* Ensure padding is included in element’s total width and height */
+    overflow: visible; /* Ensure content is not clipped */
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 100vh; /* Ensure slides cover full viewport height */
+}
+
 
         .background-video {
             position: fixed;
@@ -33,33 +59,13 @@
             z-index: -1;
         }
 
-        .swiper-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100vh; /* Full height */
-            padding: 0; /* Remove padding to avoid extra space */
-            overflow: hidden; /* Prevent vertical scrolling */
-        }
+        
 
         .swiper-wrapper {
             display: flex;
         }
 
-        .swiper-slide {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            background-color: rgba(21, 19, 19, 0.5); /* Semi-transparent background for slides */
-            backdrop-filter: blur(10px); /* Optional: Adds blur effect behind slides */
-            padding: 20px;
-            border-radius: 15px;
-            box-sizing: border-box; /* Ensure padding is included in element’s total width and height */
-            overflow: visible; /* Ensure content is not clipped */
-        }
+        
 
         .swiper-slide:hover {
             transform: scale(1.05); /* Slightly zoom in */
