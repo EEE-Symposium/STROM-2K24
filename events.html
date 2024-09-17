@@ -151,6 +151,60 @@
     }
 }
 .swiper-content p{color: white;}
+/* Ensure the swiper slide contents fit the screen on smaller devices */
+.swiper-slide {
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding is included in element’s total width and height */
+}
+
+.swiper-slide h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+}
+
+.swiper-slide h3 {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+}
+
+.swiper-slide p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+}
+
+@media (max-width: 768px) {
+    .swiper-slide {
+        padding: 5px;
+    }
+    
+    .swiper-slide h2 {
+        font-size: 1.2rem; /* Adjusted for small screens */
+    }
+
+    .swiper-slide h3 {
+        font-size: 1rem; /* Adjusted for small screens */
+    }
+
+    .swiper-slide p {
+        font-size: 0.9rem; /* Adjusted for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-slide {
+        padding: 2px;
+    }
+
+    .swiper-slide h2 {
+        font-size: 1rem; /* Adjusted for extra small screens */
+    }
+
+    .swiper-slide h3 {
+        font-size: 0.9rem; /* Adjusted for extra small screens */
+    }
+
+    .swiper-slide p {
+        font-size: 0.8rem; /* Adjusted for extra small screens */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -377,24 +431,26 @@
 
     <script>
         // Initialize Swiper
+        // Initialize Swiper
         var swiper = new Swiper('.swiper-container', {
-        loop: true, // Allows infinite scrolling
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        slidesPerView: 1, // One slide at a time
-        spaceBetween: 30, // Space between slides
-        effect: 'slide', // Slide transition effect
-        breakpoints: {
-            768: { slidesPerView: 2 }, // Show 2 slides on tablets
-            1024: { slidesPerView: 3 }, // Show 3 slides on desktops
-            1440: { slidesPerView: 4 }, // Show 4 slides on large screens
-        },
+            loop: true, // Allows infinite scrolling
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 1, // One slide at a time
+            spaceBetween: 10, // Adjust space between slides
+            effect: 'slide', // Slide transition effect
+            breakpoints: {
+                640: { slidesPerView: 1 }, // Show 1 slide on small screens
+                768: { slidesPerView: 1.5 }, // Show 1.5 slides on tablets
+                1024: { slidesPerView: 2 }, // Show 2 slides on desktops
+                1440: { slidesPerView: 3 }, // Show 3 slides on large screens
+            },
         });
 
     </script>
