@@ -185,7 +185,7 @@ nav ul li a:hover {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 200px;
+    width: 100px;
     max-width: 100%; /* Ensure it doesn't overflow */
 }
 .sponsor-content{
@@ -193,7 +193,7 @@ nav ul li a:hover {
     font-weight: 700;
 }
 .sponsor-img img {
-    width: 100%;
+    width: 100px;
     border-radius: 10px;
 }
 
